@@ -39,3 +39,19 @@ const bom = "\uFEFF";
 
 download(csvString, { filename: "data.csv", bom, useDataUrl: true, mime: "text/csv; charset=utf-8" });
 ```
+
+### Legacy
+
+```javascript
+const download = require("browser-file-download/dist/cjs/index.legacy.js");
+
+download("My data", { filename: "file.txt" });
+```
+
+### Modern ESM
+
+```javascript
+import { download } from "browser-file-download/dist/mjs/index.modern.js";
+
+download("My data", { filename: "file.txt" });
+```
