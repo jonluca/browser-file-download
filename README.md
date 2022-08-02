@@ -4,7 +4,7 @@ Download files with javascript
 
 ```javascript
 import axios from "axios";
-import { download } from "browser-file-download";
+import { download } from "browser-file-downloader";
 
 const download = async (url: string, filename: string) => {
   const { data } = await axios.get(url, {
@@ -32,7 +32,7 @@ interface DownloadOptions {
 If your CSVs are looking weird, you can try
 
 ```typescript
-import { download } from "browser-file-download";
+import { download } from "browser-file-downloader";
 
 let csvString = "";
 const bom = "\uFEFF";
@@ -43,7 +43,7 @@ download(csvString, { filename: "data.csv", bom, useDataUrl: true, mime: "text/c
 ### Legacy
 
 ```javascript
-const download = require("browser-file-download/dist/cjs/index.legacy.js");
+const download = require("browser-file-downloader/dist/cjs/index.legacy.js");
 
 download("My data", { filename: "file.txt" });
 ```
@@ -51,7 +51,7 @@ download("My data", { filename: "file.txt" });
 ### Modern ESM
 
 ```javascript
-import { download } from "browser-file-download/dist/mjs/index.modern.js";
+import { download } from "browser-file-downloader/dist/mjs/index.modern.js";
 
 download("My data", { filename: "file.txt" });
 ```

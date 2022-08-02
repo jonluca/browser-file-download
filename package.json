@@ -1,5 +1,5 @@
 {
-  "name": "browser-file-download",
+  "name": "browser-file-downloader",
   "version": "0.0.1",
   "description": "Download a file using javascript",
   "types": "dist/mjs/index.d.ts",
