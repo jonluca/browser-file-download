@@ -1,0 +1,47 @@
+{
+  "name": "browser-file-download",
+  "version": "0.0.1",
+  "description": "Download a file using javascript",
+  "types": "dist/mjs/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "rm -fr dist/* && node scripts/build.cjs && yarn build:types -p tsconfig.json && yarn build:types -p tsconfig-cjs.json",
+    "build:types": "tsc --emitDeclarationOnly --declaration",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonluca/browser-file-download.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonluca/browser-file-download/issues"
+  },
+  "homepage": "https://github.com/jonluca/browser-file-download",
+  "author": "JonLuca DeCaro <filedownload@jonlu.ca>",
+  "license": "MIT",
+  "devDependencies": {
+    "p-limit": "^4.0.0",
+    "esbuild": "^0.14.51",
+    "prettier": "^2.7.1",
+    "rollup": "^2.77.2",
+    "typescript": "^4.7.4"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "arrowParens": "always",
+    "semi": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
+  }
+}
